@@ -1,5 +1,6 @@
 \name{stateProfile}
 \alias{stateProfile}
+\alias{subsetByRanges}
 \alias{stateProf}
 \alias{csProfile}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -15,10 +16,11 @@ for a family of cell types managed in an ErmaSet instance.
 stateProfile(ermaset, symbol = "IL33", upstream = 2000, 
    downstream = 200, ctsize = 10, 
    shortCellType = TRUE, tsswidth=3 )
-stateProf(ermaset, shortCellType=TRUE, ctsize=10, iniSym="IL7R")
+stateProf(ermaset, shortCellType=FALSE, ctsize=10, iniSym="IL7R")
 csProfile(ermaset, symbol, upstream = 2000, downstream = 200,
                  useShiny = FALSE, ctsize = 10, shortCellType = TRUE,
                  tsswidth = 3)
+subsetByRanges(ermaset, range)
 }
 
 %- maybe also 'usage' for other objects documented here.
@@ -28,6 +30,9 @@ instance of \code{\link[erma]{ErmaSet-class}}
 }
   \item{symbol}{
 gene symbol resolvable in \code{\link[Homo.sapiens]{Homo.sapiens}}
+}
+  \item{iniSym}{
+initial symbol for display, when using shiny app in stateProf
 }
   \item{upstream, downstream}{
 parameters passed to \code{\link[GenomicRanges]{promoters}} to
@@ -44,6 +49,7 @@ ad hoc abbreviations are used for facet labeling
 interactive selection of gene, and scope of view}
   \item{tsswidth}{width in base pairs of the base of a black
 rectangle used to depict location of transcription start site}
+  \item{range}{instance of GRanges}
 }
 %\details{
 %stateProf is a demonstration shiny app calling stateProfile
