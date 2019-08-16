@@ -15,7 +15,7 @@ narrDFcols = function() {
    cand
 }
  
-setClass("narrDF", contains="DataFrame")
+setClass("narrDF", contains="DFrame")
 setMethod("show", "narrDF", function(object) {
 cat("(showing narrow slice of ", nrow(object), "x", ncol(object), " DataFrame)\   ")
 if (ncol(object)==95) callNextMethod(object[,narrDFcols()])
