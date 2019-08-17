@@ -1,4 +1,5 @@
 import(methods)
+import(S4Vectors)
 import(IRanges)
 import(GenomeInfoDb)
 importFrom(utils, read.csv, data)
@@ -17,8 +18,6 @@ export(genemodel, makeErmaSet, stateProfile, stateProf,
    mapmeta, cellTypes, geneTxRange, csProfile, map2range,
    subsetByRanges)
 
-importClassFrom("S4Vectors", "DataFrame")
-importFrom("S4Vectors", "DataFrame")
 exportClass("ErmaSet")
 importFrom("rtracklayer", "import")
 
